@@ -19,6 +19,7 @@ function decimalToBase(num, base) {
 
 function toDecimal (num, base) {
   let result = 0;
+  num = num.toString().toUpperCase();
   let split = num.split("").reverse();
   
   if (base == 16) {
@@ -53,17 +54,17 @@ function toDecimal (num, base) {
   return result;
 }
 
-// BUTTON BEHAVIOURS //
-document.getElementById("binary-button").onclick = () => binaryGo();
-document.getElementById("octal-button").onclick = () => octalGo();
-document.getElementById("decimal-button").onclick = () => decimalGo();
-document.getElementById("hexa-button").onclick = () => hexaGo();
-
 // INPUT FIELDS //
 let binaryInput = document.getElementById("binary-input");
 let octalInput = document.getElementById("octal-input");
 let decimalInput = document.getElementById("decimal-input");
 let hexaInput = document.getElementById("hexa-input");
+
+// BUTTON BEHAVIOURS //
+document.getElementById("binary-button").onclick = () => calculate(binaryInput, 2);
+document.getElementById("octal-button").onclick = () => calculate(octalInput, 8);
+document.getElementById("decimal-button").onclick = () => calculate(decimalInput, 10);
+document.getElementById("hexa-button").onclick = () => calculate(hexaInput, 16);
 
 function binaryGo() {
   let num = binaryInput.value;
@@ -83,20 +84,12 @@ function octalGo() {
   hexaInput.value = decimalToBase(dec, 16);
 }
 
-function decimalGo() {
-  let num = decimalInput.value;
-  let dec = toDecimal(num, 10);
-  
-  binaryInput.value = decimalToBase(dec, 2);
-  octalInput.value = decimalToBase(dec, 8);
-  hexaInput.value = decimalToBase(dec, 16);
-}
-
-function hexaGo() {
-  let num = hexaInput.value;
-  let dec = toDecimal(num, 16);
+function calculate(inputField, base) {
+  let num = inputField.value;
+  let dec = toDecimal(num, base);
   
   binaryInput.value = decimalToBase(dec, 2);
   octalInput.value = decimalToBase(dec, 8);
   decimalInput.value = dec;
+  hexaInput.value = decimalToBase(dec, 16);
 }
