@@ -1,15 +1,42 @@
 body {
   display: grid;
+  color: white;
   font-family: 'Press Start 2P', monospace;
+  background-color: #ABB9CF;
 }
 
 h6 {
   margin: 15px 0 -15px 0;
+  font-size: 18px;
+
+  color: #586882;
+}
+
+button {
+  margin: 0 0 0 10px;
+  background-color: #A7B9D6;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  color: #DFDFF0;
+  height: 27.5px;
+  padding: 5px 5px 10px 5px;
+}
+
+input[type=text] {
+  background-color: #A7B9D6;
+  color: grey;
+  height: 20px;
+  font-size: 12px;
+  font-family: 'Press Start 2P', monospace;
 }
 
 #meta-container {
-  background-color: #C1CDC5;
+  background-color: #88A8DB;
   margin: 15em auto 20em auto;
   padding: 25px 50px 35px 50px;
+  
+  border-width: 3px;
+  border-color: #586882;
+  border-style: solid;
   border-radius: 10px;
 }
