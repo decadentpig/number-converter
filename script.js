@@ -66,24 +66,6 @@ document.getElementById("octal-button").onclick = () => calculate(octalInput, 8)
 document.getElementById("decimal-button").onclick = () => calculate(decimalInput, 10);
 document.getElementById("hexa-button").onclick = () => calculate(hexaInput, 16);
 
-function binaryGo() {
-  let num = binaryInput.value;
-  let dec = toDecimal(num, 2);
-  
-  octalInput.value = decimalToBase(dec, 8);
-  decimalInput.value = dec;
-  hexaInput.value = decimalToBase(dec, 16);
-}
-
-function octalGo() {
-  let num = octalInput.value;
-  let dec = toDecimal(num, 8);
-  
-  binaryInput.value = decimalToBase(dec, 2);
-  decimalInput.value = dec;
-  hexaInput.value = decimalToBase(dec, 16);
-}
-
 function calculate(inputField, base) {
   let num = inputField.value;
   let dec = toDecimal(num, base);
