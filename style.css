@@ -1,0 +1,15 @@
+body {
+  display: grid;
+  font-family: 'Press Start 2P', monospace;
+}
+
+h6 {
+  margin: 15px 0 -15px 0;
+}
+
+#meta-container {
+  background-color: #C1CDC5;
+  margin: 15em auto 20em auto;
+  padding: 25px 50px 35px 50px;
+  border-radius: 10px;
+}
